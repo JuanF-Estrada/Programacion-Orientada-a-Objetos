@@ -1,6 +1,6 @@
 class Inmueble:
     def __init__(self, identificador_inmobiliario, area, direccion):
-        self._identificador_inmobiliario = identificador_inmobiliario  # protegido
+        self._identificador_inmobiliario = identificador_inmobiliario  
         self._area = area
         self._direccion = direccion
         self._precio_venta = 0
@@ -76,7 +76,6 @@ class Apartaestudio(InmuebleVivienda):
     valor_area = 1500000
 
     def __init__(self, identificador_inmobiliario, area, direccion):
-        # Apartaestudio siempre 1 hab y 1 baño
         super().__init__(identificador_inmobiliario, area, direccion, 1, 1)
 
     def imprimir(self):
@@ -96,13 +95,13 @@ class ApartamentoFamiliar(InmuebleVivienda):
         print()
 
 class Local:
-    valor_area = None  # Se define en subclases
+    valor_area = None 
 
     def __init__(self, identificador_inmobiliario, area, direccion, tipo):
         self._identificador_inmobiliario = identificador_inmobiliario
         self._area = area
         self._direccion = direccion
-        self._tipo = tipo  # Interno o Calle
+        self._tipo = tipo 
         self._precio_venta = 0
 
     def calcular_precio_venta(self, valor_area):
@@ -140,7 +139,7 @@ class Oficina(Local):
         print(f"Es oficina gubernamental = {'Sí' if self._es_gobierno else 'No'}")
         print()
 
-# Ejemplo de uso
+
 if __name__ == "__main__":
     apto_familiar = ApartamentoFamiliar(103067, 120, "Avenida Santander 45-45", 3, 2, 200000)
     apto_familiar.calcular_precio_venta(ApartamentoFamiliar.valor_area)
